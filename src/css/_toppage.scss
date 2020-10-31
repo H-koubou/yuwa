@@ -1,0 +1,776 @@
+@charset "utf-8";
+.mainimg-wrap {
+  padding: 7.5% 5%;
+  position: relative;
+  @include flex(center, center, row, nowrap);
+  background: url(../img/main_visual.png) no-repeat center / cover;
+  > .mainobject {
+    max-width: 500px;
+    width: 100%;
+    @include sm {
+      max-width: 60%;
+      width: 100%;
+    }
+  }
+  > .performance {
+    position: absolute;
+    width: 240px;
+    bottom: -5%;
+    right: 5%;
+    @include md {
+      width: 150px;
+      bottom: 5%;
+    }
+    @include smmin {
+      width: 80px;
+      bottom: 5%;
+    }
+  }
+}
+
+.strongth-wrap {
+  position: relative;
+  z-index: 1;
+  margin: -3.5% 0 0;
+  > .strengthlist {
+    > .list {
+      @include flex(flex-start, flex-start, row, nowrap);
+      @include prefix(transform, skew(0,-7.5deg));
+      overflow: hidden;
+      width: 100%;
+      height: 500px;
+      margin: 5% 0 0;
+      @include xlg {
+        height: 300px;
+      }
+      @include smmin {
+        display: block;
+        height: 200px;
+        @include prefix(transform, skew(0,-5.5deg));
+      }
+      &:nth-of-type(n+2) {
+        margin: 0;
+      }
+      &:nth-of-type(2n) {
+        @include flex(flex-start, flex-start, row-reverse, nowrap);
+        @include smmin {
+          display: block;
+        }
+        .readbox {
+          background: #fff;
+          > .title {
+            color: $fontColorBase;
+          }
+          > .read {
+            color: $fontColorBase;
+          }
+        }
+      }
+      &:first-of-type {
+        .readbox {
+          &:before {
+            background: url(../img/strong1_number.png) no-repeat center / contain;
+            opacity: .2;
+          }
+        }
+      }
+      &:nth-of-type(2) {
+        .readbox {
+          &:before {
+            background: url(../img/strong2_number.png) no-repeat center / contain;
+            opacity: .2;
+          }
+        }
+      }
+      &:nth-of-type(3) {
+        .readbox {
+          &:before {
+            background: url(../img/strong3_number.png) no-repeat center / contain;
+            opacity: .2;
+          }
+        }
+      }
+      &:nth-of-type(4) {
+        .readbox {
+          &:before {
+            background: url(../img/strong4_number.png) no-repeat center / contain;
+            opacity: .2;
+          }
+        }
+      }
+      &:nth-of-type(5) {
+        .readbox {
+          &:before {
+            background: url(../img/strong5_number.png) no-repeat center / contain;
+            opacity: .2;
+          }
+        }
+      }
+      &:nth-of-type(6) {
+        .readbox {
+          &:before {
+            background: url(../img/strong6_number.png) no-repeat center / contain;
+            opacity: .2;
+          }
+        }
+      }
+      &:nth-of-type(7) {
+        .readbox {
+          &:before {
+            background: url(../img/strong7_number.png) no-repeat center / contain;
+            opacity: .2;
+          }
+        }
+      }
+    }
+    > .list > .readbox {
+      padding: 5%;
+      background: $colorMain;
+      @include flex(center, flex-start, column, nowrap );
+      @include prefix(transform, skew(0,7.5deg));
+      @include prefix(flex, 0 0 35%);
+      height: 700px;
+      width: 30%;
+      margin: -100px 0 0 0;
+      position: relative;
+      z-index: 0;
+      @include xlg {
+        height: 500px;
+      }
+      @include sm {
+        @include prefix(flex, 0 0 45%);
+      }
+      @include smmin {
+        width: 100%;
+        height: 300px;
+        margin: -50px 0 0 0;
+        @include prefix(transform, skew(0,5.5deg));
+      }
+      &:before {
+        content: "";
+        z-index: -1;
+        width: 30.29%;
+        height: 32.43%;
+        position: absolute;
+        top: 50%;
+        @include prefix(transform, translateY(-50%) );
+        right: 20%;
+        @include smmin {
+          left: -5%;
+        }
+      }
+      > .title {
+        font-size: 2vw;
+        font-weight: bold;
+        color: #fff;
+        line-height: 1.5;
+        margin: 1em 0 20px;
+        @include sm {
+          font-size: 3vw;
+        }
+        @include smmin {
+          @include font-size(2.0);
+          margin: 10% 0 15px 15%;
+        }
+      }
+      > .read {
+        font-size: 1vw;
+        color: #fff;
+        line-height: 1.5;
+        margin: 0 0 20px;
+        @include sm {
+          font-size: 1.5vw;
+        }
+        @include smmin {
+          @include font-size(1.4);
+          margin: 0 0 5% 15%;
+        }
+      }
+    }
+    > .list > .image {
+      @include prefix(transform, skew(0,7.5deg));
+      @include prefix(flex, 1 1);
+      height: 700px;
+      margin: 30px 0 0 0;
+      width: 70%;
+      margin: -100px 0 0 0;
+      position: relative;
+      overflow: hidden;
+      @include xlg {
+        height: 500px;
+      }
+      @include smmin {
+        display: none;
+      }
+      img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @include prefix(transform,translate(-50%, -50%));
+        max-width: initial;
+        width:  100%;
+        @include xlg {
+          max-width: initial;
+          width:  auto;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.price-wrap {
+  padding: 7.5% 5% 5%;
+  background: url(../img/pettern_back.png) no-repeat center / cover;
+  > .read {
+    @include Inner;
+    text-align: center;
+    line-height: 2;
+    margin: 30px auto 45px;
+  }
+ > .pricedetail {
+   @include Inner;
+   @include flex(flex-start, stretch, row, nowrap);
+   margin-bottom: 7%;
+   @include md {
+      display: block;
+   }
+   > .titlebox {
+     @include prefix(flex, 1 1);
+     position: relative;
+     z-index: 0;
+     padding: 30px;
+     @include flex(center, center, row, nowrap);
+     background: url(../img/service_detail_back.png) no-repeat center / cover;
+     @include md {
+      padding: 10% 5%;
+    }
+     &:before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,.4);
+      position: absolute;
+      top: 0;
+      left: 0;
+     }
+   }
+   > .titlebox > .title { 
+     @include font-size(3.5);
+     color: #fff;
+     font-weight: bold;
+     z-index: 1;
+     @include sm {
+      @include font-size(2.5);
+    }
+   }
+
+   > .detailbox {
+     @include prefix(flex,0 1 35%);
+     background: #333333;
+     padding: 40px 50px;
+   }
+   > .detailbox > .read { 
+     color: #fff;
+     margin: 0 0 10px;
+     line-height: 1.5;
+   }
+   > .detailbox > .price { 
+    @include font-size(1.8);
+    color: #fff;
+    font-weight: bold;
+    > span {
+      @include font-size(3.5);
+      color: #3ec5ff;
+      @include lg {
+        font-size: 3vw;
+      }
+    }
+   }
+ }
+  > .contents {
+    @include Inner;
+    padding: 2.5% 2.5%;
+    background: #fff;
+    > div {
+      &:first-of-type {
+        position: relative;
+        z-index: 0;
+        margin: 0 0 10%;
+        > .title {
+          @include font-size(3.6);
+          font-weight: bold;
+          color: $colorMain;
+          line-height: 1.2;
+          margin: 0 0 1em;
+          @include md {
+            @include font-size(3.0);
+          }
+          @include sm {
+            @include font-size(2.5);
+          }
+          @include smmin {
+            @include font-size(1.8);
+          }
+        }
+        > .read {
+          @include font-size(2.4);
+          font-weight: bold;
+          margin: 0 0 1.5em;
+          @include md {
+            @include font-size(1.8);
+          }
+        }
+        > .image {
+          position: absolute;
+          right: -3.5%;
+          top: 3%;
+          max-width: 330px;
+          width: 100%;
+          z-index: -1;
+          @include md {
+            display: none;
+          }
+        }
+        > .cautionlist {
+          > .list {
+            line-height: 1.8;
+            @include flex(flex-start, flex-start, row, nowrap);
+            &:before {
+              content: "※";
+            }
+            @include sm {
+              @include font-size(1.4);
+            }
+          }
+        }
+      }
+      &:nth-of-type(2) {
+        > .titlebox {
+          text-align: center;
+          margin: 0 0 5%;
+          > .subtitle {
+            @include font-size(1.4);
+            font-weight: 700;
+            color: $colorMain;
+            margin: 0 0 10px;
+          }
+          > .title {
+            @include font-size(3.6);
+            font-weight: 700;
+            @include md {
+              @include font-size(2.4);
+            }
+            @include smmin {
+              @include font-size(2.0);
+              line-height: 1.8;
+            }
+          }
+        }
+        > .detailbox {
+          @include flex(flex-start, flex-start, row, nowrap);
+          @include sm {
+            display: block;
+          }
+          > .servicelist {
+            @include prefix(flex, 1 1);
+            margin: 0 0 2.5%;
+          }
+          > .contactbox {
+            @include prefix(flex, 0 1 45%);
+            > .title {
+              margin: 0 0 20px;
+            }
+            img {
+              width: 100%;
+            }
+          }
+          > .servicelist {
+            > .title {
+              @include font-size(2.4);
+              font-weight: 700;
+              margin: 0 0 .8em;
+              @include smmin {
+                @include font-size(1.6);
+                line-height: 1.8;
+              }
+            }
+            > .detail > .listbox > .list {
+              line-height: 1.8;
+              &:before {
+                content: "・";
+              }
+              @include smmin {
+                @include font-size(1.4);
+                line-height: 1.8;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.area-wrap {
+  padding: 5%;
+  > .contents {
+    @include Inner;
+    padding: 2.5% 4%;
+    margin: 5% auto 0;
+    background: #eaf9f1;
+    @include flex(flex-start, flex-start, row, nowrap);
+    @include sm {
+      display: block;
+    }
+  }
+  > .contents > .textcontents {
+    @include prefix(flex, 0 1 60%);
+  }
+  > .contents > .textcontents > .title {
+    @include font-size(3.6);
+    font-weight: 700;
+    line-height: 1.8;
+    margin: 0 0 .5em;
+    @include md {
+      @include font-size(2.6);
+    }
+    @include smmin {
+      @include font-size(1.8);
+    }
+  }
+  > .contents > .textcontents > .preflist {
+   @include flex(flex-start, flex-start, row, wrap);
+   @include smmin {
+     @include flex(space-between, flex-start, row, wrap);
+    }
+  }
+  > .contents > .textcontents > .preflist > .list {
+   margin: 0 2.5% 2.5% 0;
+   
+   @include smmin {
+    width: 48.75%;
+    &:nth-of-type(2n) {
+      margin: 0 0 2.5%;
+    }
+  }
+    img {
+      width: 100%;
+    }
+  }
+  > .contents > .textcontents > .read {
+    @include font-size(2.4);
+    font-weight: 700;
+    margin: .5em 0 0;
+    @include md {
+      @include font-size(1.8);
+    }
+    @include sm {
+      margin: .5em 0 2.5%;
+    }
+  }
+  > .contents > .image {
+    @include prefix(flex, 0 1 40%);
+  }
+}
+
+.flow-wrap {
+  padding: 5%;
+  background: #eef2f2;
+  > .flowitem {
+    @include Inner;
+    margin: 2.5% auto 0;
+  }
+  > .flowitem > .item {
+    @include flex(flex-start, stretch, row, nowrap);
+    position: relative;
+    &:not(:last-of-type) {
+      margin: 0 0 7%;
+      @include md {
+        margin: 0 0 10%;
+      }
+      @include xs {
+        margin: 0 0 15%;
+      }
+      &:after {
+        content: "";
+        width: 106px;
+        height: 20px;
+        display: block;
+        background: url(../img/flow_arrow.png) no-repeat center / contain;
+        position: absolute;
+        bottom: -50px;
+        left: 50%;
+        @include prefix(transform, translateX(-50%));
+        @include smmin {
+          width: 60px;
+          height: 11.32px;
+          bottom: -30px;
+        }
+      }
+    }
+  }
+  > .flowitem > .item > .number {
+    @include font-size(6.0);
+    font-weight: 700;
+    color: #fff;
+    width: 115px;
+    height: 115px;
+    background: $colorMain;
+    @include flex(center, center, row, nowrap);
+    @include md {
+      @include font-size(4.0);
+    }
+    @include smmin {
+      @include font-size(2.0);
+      position: absolute;
+      left: -2.5%;
+      top: -25px;
+      width: 60px;
+      height: 60px;
+    }
+    @include xs {
+      @include font-size(1.4);
+      top: -15px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+  > .flowitem > .item > .nestitem {
+    padding: 30px;
+    background: #fff;
+    @include flex(flex-start, center, row, nowrap);
+    @include prefix(flex, 1 1);
+    @include md {
+      padding: 2.5%;
+    }
+    @include smmin {
+      padding: 7.5% 5% 5%;
+      display: block;
+    }
+    @include xs {
+      padding: 12.5% 5% 5%;
+    }
+  }
+  > .flowitem > .item > .nestitem > .title {
+    @include font-size(3.4);
+    font-weight: 700;
+    color: $colorMain;
+    @include prefix(flex, 0 1 40%);
+    margin: 0 .5em 0 0;
+    @include md {
+      @include font-size(2.4);
+    }
+    @include smmin {
+      margin: 0 0 15px;
+    }
+    @include xs {
+      @include font-size(1.8);
+    }
+  }
+  > .flowitem > .item > .nestitem > .detail {
+    @include prefix(flex, 1 1);
+    line-height: 1.8;
+    @include md {
+      br {
+        display: none;
+      }
+    }
+    
+  }
+}
+
+.voice-wrap {
+  padding: 5%;
+  > .voicecontents {
+    padding: 2.5%;
+    border: 20px solid #d8d8d8;
+    position: relative;
+    @include Inner;
+    margin: 5% auto 5%;
+    min-height: 400px;
+    @include flex(flex-start, center, row, nowrap);
+    @include smmin {
+      min-height: 0;
+      @include flex(flex-start, flex-start, column-reverse, nowrap);
+      padding: 5%;
+      border: 10px solid #d8d8d8;
+    }
+    > .image {
+      width: 40%;
+      position: absolute;
+      top: 50%;
+      right: -5%;
+      min-height: 0%;
+      @include prefix(transform,translateY(-50%));
+      @include smmin {
+        width: 100%;
+        position: static;
+        top: 0;
+        right: 0;
+        @include prefix(transform,translateY(0%));
+        margin: 0 0 5%;
+      }
+    }
+    &:nth-of-type(2n) {
+      @include flex(flex-end, center, row, nowrap);
+      > .image {
+        left: -5%;
+      }
+      @include smmin {
+        @include flex(flex-start, flex-start, column-reverse, nowrap);
+      }
+    }
+  }
+  > .voicecontents > .textbox {
+    width: 62.5%;
+    @include smmin {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+  > .voicecontents > .textbox > .title {
+    @include font-size(2.4);
+    font-weight: 700;
+    line-height: 1.8;
+    margin: 0 0 .75em;
+    @include smmin {
+      @include font-size(1.6);
+    }
+  }
+  > .voicecontents > .textbox > .categorybox {
+    @include flex(flex-start, flex-start, row, nowrap);
+    margin: 0 0 5%;
+    > p {
+      @include font-size(1.4);
+      color: #fff;
+      padding: 10px;
+      @include smmin {
+        padding: 5px;
+      }
+    }
+    > .method {
+      background: #ff8000;
+    }
+    > .customer {
+      background: #666666;
+    }
+  }
+  > .voicecontents > .textbox > .read {
+    line-height: 1.8;
+    @include smmin {
+      @include font-size(1.4);
+    }
+  }
+}
+
+.faq-wrap {
+  padding: 5%;
+  > .faqitem {
+    @include Inner;
+    margin-top: 5%;
+    padding: 30px 50px;
+    background: #ececfb;
+    @include xs {
+      padding: 20px 5%;
+    }
+  }
+  > .faqitem > .title {
+    margin: 0 0 20px;
+    &:before {
+      background: url(../img/q_icon.png) no-repeat center / contain;
+    }
+  }
+  > .faqitem > .title,
+  > .faqitem > .detail {
+    @include font-size(1.6);
+    line-height: 1.8;
+    @include prefix(flex, 1 1);
+    @include flex(flex-start, center, row, nowrap);
+    @include xs {
+      @include flex(flex-start, flex-start, row, nowrap);
+    }
+    &:before {
+      content: "";
+      @include prefix(flex, 0 0 45px);
+      width: 45px;
+      height: 45px;
+      margin: 0 20px 0 0;
+      @include xs {
+        @include prefix(flex, 0 0 35px);
+        width: 35px;
+        height: 35px;
+        margin: 0 5% 0 0;
+      }
+    }
+  }
+  > .faqitem > .detail {
+    &:before {
+      background: url(../img/a_icon.png) no-repeat center / contain;
+    }
+  }
+}
+
+aside.contact-wrap {
+  padding: 2.5% 3.5%;
+  border: 5px solid $colorMain;
+  margin: 0 0 5%;
+  @include Inner;
+  @include md {
+    max-width: 90%;
+    width: 100%;
+    margin: 0 5% 5%;
+  }
+  > .title {
+    @include font-size(3.2);
+    font-weight: 700;
+    line-height: 1.8;
+    margin: 0 0 1em;
+    text-align: center;
+    @include smmin {
+      @include font-size(1.6);
+    }
+  }
+  > .contents {
+    @include flex(flex-start, flex-start, row, nowrap);
+    @include sm {
+      display: block;
+    }
+  }
+  > .contents > .textbox {
+    @include prefix(flex, 1 1);
+    border-right: 1px solid #dddddd;
+    margin: 0 40px 0 0;
+    @include sm {
+      border-right: none;
+      margin: 0 0 2.5%;
+    }
+    > .title {
+      @include font-size(2.4);
+      font-weight: 700;
+      margin: 0 0 .8em;
+      @include smmin {
+        @include font-size(1.4);
+      }
+    }
+    > .detail > .listbox > .list {
+      line-height: 1.8;
+      &:before {
+        content: "・";
+      }
+      @include smmin {
+        @include font-size(1.2);
+      }
+    }
+  }
+  > .contents > .contactbox {
+    @include prefix(flex, 1 1);
+    > .title {
+      margin: 0 0 20px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}

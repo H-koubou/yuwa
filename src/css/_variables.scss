@@ -1,0 +1,115 @@
+@charset "utf-8";
+
+$colorMain: #017440;
+$colorBase: #0f0f0f;
+$fontColorBase: #0f0f0f;
+$footerBackColor: #0E0E0E;
+
+@mixin fontAwesome5 {
+  font-family: "Font Awesome 5 Free";
+}
+@mixin fontAwesome {
+  font-family: "fontawesome";
+}
+@mixin font-family {
+  font-family: '小塚ゴシック Pro','Kozuka Gothic Pro',sans-serif;
+}
+
+@mixin Inner {
+  max-width: 1150px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  @include md {
+    max-width: 100%;
+  }
+}
+@mixin MinInner {
+  max-width: calc(700px + 10%);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 5%;
+  @include md {
+    max-width: 70%;
+  }
+}
+
+ @mixin flex($justify: flex-start, $align: flex-start, $direction: column, $wrap: nowrap ) {
+  align-items: $align;
+  -webkit-align-items: $align;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-flex-direction: $direction;
+  flex-direction: $direction;
+  -webkit-justify-content: $justify;
+  justify-content: $justify;
+  -webkit-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+
+ @mixin position-center($top: 50%, $left: 50%, $translateX: -50%, $translateY: -50%) {
+  left: $left;
+  position: absolute;
+  top: $top;
+  transform: translate($translateX, $translateY);
+}
+
+
+ @mixin prefix($property, $value) {
+  @each $prefix in "",-webkit- {
+    #{$prefix}#{$property}: $value;
+  }
+}
+
+  $xlg: 1520px;
+  $lg: 1280px;
+  $md: 980px;
+  $sm: 768px;
+  $smmin: 767px;
+  $xs: 480px;
+
+@mixin xlg {
+  @media screen and (max-width: $xlg) {
+    @content;
+  }
+}
+@mixin lg {
+  @media screen and (max-width: $lg) {
+    @content;
+  }
+}
+@mixin md {
+  @media screen and (max-width: $md) {
+    @content;
+  }
+}
+@mixin sm {
+  @media screen and (max-width: $sm) {
+    @content;
+  }
+}
+@mixin smmin {
+  @media screen and (max-width: $smmin) {
+    @content;
+  }
+}
+@mixin xs {
+  @media screen and (max-width: $xs) {
+    @content;
+  }
+}
+
+
+@mixin font-size($size: 1.4) {
+  font-size: ($size*10) + px;
+  font-size: $size + rem;
+}
+
+@mixin line-height($height: 30, $size: 14) {
+  line-height: ($height/$size);
+}
+
+@mixin letter-spacing($size: 30) {
+  letter-spacing: ($size/1000)em;
+}

@@ -1,0 +1,29 @@
+doctype html
+// コメント
+html(lang="ja")
+  head
+    meta(charset="utf-8")
+    style(src="css/style.css")
+    title テスト
+  body
+    h1#sitettl Pugタイトル
+main
+  article
+
+    //- ヘッダ
+    header.home-Hero
+      h1.home-Hero_Logo
+        img(src="#" alt="")
+
+    //- About
+    section.home-About
+      .home-About_Title
+        h2.home-About_Heading.sw-Heading
+          | About
+        p.home-About_Description
+          | CSS Talkとは？
+        svg.home-About_Clips
+          defs
+            clippath#home-About_TitleClip(clipPathUnits="objectBoundingBox")
+              polygon(
+              points="0,0 1,0 1,.934 .997,.943 .994,.948 .991,.95 .523,.95 .5,1, .477,.95 .009,.95 .006,.948 .003,.943 0,.934")
